@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ui-mobile">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <title>Correctivos En Cotizacion</title>
+    <link href="//code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/latest/jquery.mobile.min.js" type="text/javascript"></script>
+    <style type="text/css">
+      .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit {
+        padding-left: 40px
+      }
+
+      .ui-li-thumb, .ui-listview .ui-li-icon {
+        left: 11px;
+        top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+     <div id="find" data-role="page">
+        <div data-theme="b" data-position="fixed" data-role="header">
+          <a rel="external" data-role="button" data-icon="bars" href="menu.html">
+            Menú
+          </a>
+          <h1>Reportes en Cotización</h1>
+          <a rel="external" data-role="button" data-icon="delete" class="ui-btn-right" href="auth.html">
+            Salir
+          </a>
+        </div>
+        <div data-role="content">
+          <ul data-filter="true" data-role="listview">
+            <li>
+              <a data-transition="flip" rel="external" href="quotation.html">
+                <img src="/assets/passdue.png">
+                <h1>AT&amp;T Noroeste</h1>
+                <h1>Sucursal CULIACAN CAP LEYVA</h1>
+                <p>Reporte #67493</p>
+                <p>fsfsf</p>
+              </a>
+            </li>
+            <li>
+              <a data-transition="flip" rel="external" href="quotation.html">
+                <img src="/assets/ontime.png">
+                <h1>AT&amp;T Noroeste</h1>
+                <h1>Sucursal CULIACAN CAP LEYVA</h1>
+                <p>Reporte #67494</p>
+                <p>Se rompió la tubería</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      <div data-theme="b" data-role="footer">
+        <h4>SIMA</h4>
+      </div>
+    </div>
+  </body>
+</html>

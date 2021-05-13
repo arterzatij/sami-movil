@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ui-mobile">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <title>Iniciar sesión</title>
+    <link href="//code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/latest/jquery.mobile.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div data-role="page" id="login">
+      <div data-role="header" data-theme="b" >
+        <h1>Iniciar sesión</h1>
+      </div>
+      
+      <div data-role="content">
+        <t:alerts />
+        <form method="post" action="#" data-ajax="false">
+          <div data-role="controlgroup">
+            <input name="j_username" id="j_username" type="text" placeholder="Nombre de usuario" />
+            <input name="j_password" id="j_password" type="password" placeholder="Contraseña" />
+          </div>
+          <a href="menu.html" rel="external" data-transition="slidedown" data-role="button" data-theme="b">
+            Iniciar Sesion
+          </a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

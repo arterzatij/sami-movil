@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ui-mobile">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <title>Cotizacion</title>
+    <link href="//code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/latest/jquery.mobile.min.js" type="text/javascript"></script>
+    <style>
+      form {
+        margin-bottom: 15px;
+      }
+        
+      label.ui-select {
+        text-align: center;
+      }
+
+      .ui-li-desc {
+        font-size: 16px;
+        text-overflow: initial;
+        overflow: initial;
+        white-space: normal;
+        margin: initial;
+      }
+
+      .ui-li .ui-btn-text a.ui-link-inherit {
+        text-overflow: initial;
+        overflow: initial;
+        white-space: normal;
+        text-align: justify;
+      }
+
+      .ui-collapsible-heading .ui-li-aside,
+      .ui-li-heading .ui-li-aside {
+        margin: 0;
+      }
+
+      .ui-btn-up-e {
+        border: 1px solid #e91e63;
+        background: #f44336;
+        color: #FFF;
+        text-shadow: 0 1px 0 #222;
+        background-image: -webkit-gradient(linear,left top,left bottom,from(#f44336),to(#e91e63));
+        background-image: -webkit-linear-gradient(#f44336,#e91e63);
+        background-image: -moz-linear-gradient(#f44336,#e91e63);
+        background-image: -ms-linear-gradient(#f44336,#e91e63);
+        background-image: -o-linear-gradient(#f44336,#e91e63);
+        background-image: linear-gradient(#f44336,#e91e63);
+      }
+
+      label.ui-slider {
+        margin: 16px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main" data-url="main" data-role="page">
+      <div data-role="header" data-position="fixed" data-theme="b">
+        <a rel="external" data-role="button" data-icon="bars" href="menu.html">
+          Menú
+        </a>
+        <h1>AT T - NTC001</h1>
+        <a rel="external" data-role="button" data-icon="delete" class="ui-btn-right" href="auth.html">
+          Salir
+        </a>
+        <div data-role="navbar" data-theme="b">
+          <ul>
+            <li style="text-align: right;font-size: 22px;">
+              Subtotal: &nbsp;
+            </li>
+            <li style="font-size: 22px;">
+              $ 19279.24
+            </li>
+          </ul>
+        </div>
+      </div><!-- /header -->
+      <div data-role="content">
+          <p style="text-align: justify;">Buena tarde Fernando: de tu amable apoyo URGENTE para atender la reparacion de plafon quebrado en nuestra sucursal, asi como tambien fijar el muro de division entre puerta de tienda y pasillo. ATTE: BTJ</p>
+          
+          <form id="myform" action="formprocessor.php" method="post">
+              <ul data-role="listview" data-inset="true">
+                  <li data-role="fieldcontain">
+                      <textarea name="diagnostic" id="diagnostic" placeholder="Diagnostico"></textarea>
+                  </li>
+                  <li data-role="fieldcontain">
+                      <div class="ui-grid-a">
+                          <div class="ui-block-a">
+                              <label for="extra-days">Dias extra</label>
+                              <select id="extra-days" name="extraDays">
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                  <option value="11">11</option>
+                                  <option value="12">12</option>
+                                  <option value="13">13</option>
+                                  <option value="14">14</option>
+                                  <option value="15">15</option>
+                              </select>
+                          </div>
+                          <div class="ui-block-b">
+                              <label for="material-delivery">Llegada Materiales</label>
+                              <select id="material-delivery" name="materialDelivery">
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                  <option value="11">11</option>
+                                  <option value="12">12</option>
+                                  <option value="13">13</option>
+                                  <option value="14">14</option>
+                                  <option value="15">15</option>
+                              </select>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </form>
+          
+          <div data-role="collapsible" 
+              data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d"
+              data-theme="b" data-content-theme="c">
+              <h2>Servicios <span class="ui-li-aside">$ 5324.64</span></h2>
+              <ul data-role="listview" data-split-icon="delete">
+                  <li>
+                      <a href="#editar-servicio">
+                          <h2>Cantidad: 1<span class="ui-li-aside">$ 1687.00</span></h2>
+                          <p>Detección y reparación de fuga de gas en equipo de aire acondicionado tipo paquete de 5 a 20 toneladas, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos. (considerado en tuberia aparente y/o sin desmonte de serpentin)</p>
+                      </a>
+                      <a href="#eliminar" data-theme="e" data-rel="dialog">Eliminar</a>
+                  </li>
+                  <li>
+                      <a href="#editar-servicio-catalogado">
+                          <h2>Cantidad: 1<span class="ui-li-aside">$ 2273.54</span></h2>
+                          <p>Detección y reparación de fuga de gas en serpentin, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos. (considerado en tuberia aparente y/o sin desmonte de serpentin)</p>
+                      </a>
+                      <a href="#eliminar" data-theme="e" data-rel="dialog">Eliminar</a>
+                  </li>
+                  <li>
+                      <a href="#editar-servicio-catalogado">
+                          <h2>Cantidad: 1<span class="ui-li-aside">$ 1364.10</span></h2>
+                          <p>Servicio de mantenimiento correctivo mayor a equipo de aire acondicionado tipo paquete de 5 toneladas de refrigeración existente, trabajo consistente en: desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, equipo, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</p>
+                      </a>
+                      <a href="#eliminar" data-theme="e" data-rel="dialog">Eliminar</a>
+                  </li>
+              </ul>
+          </div>
+          
+          <div data-role="collapsible"
+              data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d"
+              data-theme="b" data-content-theme="c">
+              <h2>Materiales <span class="ui-li-aside">$ 2004.60</span></h2>
+              <ul data-role="listview" data-split-icon="delete">
+                  <li>
+                      <a href="#editar-material">
+                          <h2>Cantidad: 1<span class="ui-li-aside">$ 54.60</span></h2>
+                          <p>Suministro y colocación de resane con redimix o renadaro ok, para fisuras incluye: suministro de todos los materiales, trazo, mano de obra, equipo y herramienta.</p>
+                      </a>
+                      <a href="#eliminar" data-theme="e" data-rel="dialog">Eliminar</a>
+                  </li>
+                  <li>
+                      <a href="#editar-material">
+                          <h2>Cantidad: 1<span class="ui-li-aside">$ 1950.00</span></h2>
+                          <p>Carga de gas r 22</p>
+                      </a>
+                      <a href="#eliminar" data-theme="e" data-rel="dialog">Eliminar</a>
+                  </li>
+              </ul>
+          </div>
+          
+          <div data-role="collapsible"
+              data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d"
+              data-theme="b" data-content-theme="c">
+              <h2>Equipos <span class="ui-li-aside">$ 11950.00</span></h2>
+              <ul data-role="listview" data-split-icon="delete">                
+                  <li>
+                      <a href="#editar-equipo">
+                          <h2>Cantidad: 1<span class="ui-li-aside">$ 11950.00</span></h2>
+                          <p>LG Dual Inverter de 18000 BTUs</p>
+                      </a>
+                      <a href="#eliminar" data-theme="e" data-rel="dialog">Eliminar</a>
+                  </li>
+              </ul>
+          </div>          
+      </div><!-- /content -->
+      <div data-role="footer" data-position="fixed">
+          <div data-role="navbar" data-theme="b">
+              <ul>
+                  <li>
+                      <a href="#buscar-servicio" data-icon="plus">Servicios</a>
+                  </li>
+                  <li>
+                      <a href="#agregar-material" data-icon="plus">Materiales</a>
+                  </li>
+                  <li>
+                      <a href="#agregar-equipo" data-icon="plus">Equipos</a>
+                  </li>
+              </ul>
+              <ul>
+                  <li>
+                      <a href="#confirmar" rel="external" data-icon="check">Enviar</a>
+                  </li>
+              </ul>
+          </div>
+      </div><!-- /footer -->
+    </div><!-- /page -->
+    
+    <div id="confirmar" data-role="page">
+      <div data-role="header" data-position="fixed" data-theme="b">
+        <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+        <h1>AT T - NTC001</h1>
+        <div data-role="navbar" data-theme="b">
+            <ul>
+                <li style="text-align: right;font-size: 22px;">
+                    Subtotal: &nbsp;
+                </li>
+                <li style="font-size: 22px;">
+                    $ 19279.24
+                </li>
+            </ul>
+        </div>
+      </div><!-- /header -->
+      <div data-role="content">
+          <div data-role="fieldcontain">
+              <p style="text-align: justify;">Buena tarde Fernando: de tu amable apoyo URGENTE para atender la reparacion de plafon quebrado en nuestra sucursal, asi como tambien fijar el muro de division entre puerta de tienda y pasillo. ATTE: BTJ</p>
+          </div>
+          
+          <ul data-role="listview" data-inset="true">
+              <li data-role="fieldcontain">
+                  <p><strong>Diagnostico:</strong></p>
+                  <p>Servicio en tuberias de agua potable</p>
+              </li>
+          
+              <li data-role="fieldcontain">
+                  <div class="ui-grid-a">
+                      <div class="ui-block-a">
+                          <p style="text-align: center;"><strong>Dias extra</strong></p>
+                          <p style="text-align: center;">0</p>
+                      </div>
+                      <div class="ui-block-b">
+                          <p style="text-align: center;"><strong>Llegada Materiales</strong></p>
+                          <p style="text-align: center;">0</p>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider">
+                  <h2>Servicios <span class="ui-li-aside">$ 5324.64</span></h2>        
+              </li>
+              <li>
+                  <h2>Cantidad: 1<span class="ui-li-aside">$ 1687.00</span></h2>
+                  <p>Detección y reparación de fuga de gas en equipo de aire acondicionado tipo paquete de 5 a 20 toneladas, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos. (considerado en tuberia aparente y/o sin desmonte de serpentin)</p>
+              </li>
+              <li>
+                  <h2>Cantidad: 1<span class="ui-li-aside">$ 2273.54</span></h2>
+                  <p>Detección y reparación de fuga de gas en serpentin, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos. (considerado en tuberia aparente y/o sin desmonte de serpentin)</p>
+              </li>
+              <li>
+                  <h2>Cantidad: 1<span class="ui-li-aside">$ 1364.10</span></h2>
+                  <p>Servicio de mantenimiento correctivo mayor a equipo de aire acondicionado tipo paquete de 5 toneladas de refrigeración existente, trabajo consistente en: desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, equipo, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</p>
+              </li>
+          </ul>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider">
+                  <h2>Materiales <span class="ui-li-aside">$ 2004.60</span></h2>
+              </li>
+              <li>
+                  <h2>Cantidad: 1<span class="ui-li-aside">$ 54.60</span></h2>
+                  <p>Suministro y colocación de resane con redimix o renadaro ok, para fisuras incluye: suministro de todos los materiales, trazo, mano de obra, equipo y herramienta.</p>
+              </li>
+              <li>
+                  <h2>Cantidad: 1<span class="ui-li-aside">$ 1950.00</span></h2>
+                  <p>Carga de gas r 22</p>
+              </li>
+          </ul>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider">
+                  <h2>Equipos <span class="ui-li-aside">$ 11950.00</span></h2>
+              </li>
+              <li>
+                  <h2>Cantidad: 1<span class="ui-li-aside">$ 11950.00</span></h2>
+                  <p>LG Dual Inverter de 18000 BTUs</p>
+              </li>
+          </ul>
+          <div data-role="fieldcontain">
+              <a href="#main" data-role="button" data-theme="b">Confirmar envio</a>
+          </div>
+      </div><!-- /content -->
+    </div><!-- /page -->
+    
+    <div id="buscar-servicio" data-role="page">
+      <div data-role="header" data-theme="b">
+          <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+          <h1>Catalogo</h1>
+      </div>
+      <div data-role="content">
+          <h3 style="text-align: center;">Busqueda de servicios catalogados</h3>
+          <div data-role="collapsible-set" data-theme="b" data-content-theme="d">
+              <div data-role="collapsible">
+                  <h2>Acabados en pisos, muros y plafones</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Aire acondicionado</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                      <li><a href="#agregar-servicio-catalogado">Instalación de cortina de aire acondicionado, incluye:  instalación de protección de cubierta, colganteo, maniobras, fijado, herramienta,  limpieza de los lugares de trabajo durante y al final de los mismos. ( no incluye instalaciones electricas.)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación , instalación y puesta en marcha de equipo de aire acondicionado tipo minisplit (evaporadora y condensadora) de 1.0 ton de refrigeración, incluye: maniobra, presentación, acarreos, colocación y puesta en marcha, mano de obra, herramienta, equipo y limpieza de los lugares de trabajo durante y al final de los mismos. (a una altura máxima de 4 metros.)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de equipo de aire acondicionado tipo minisplit (evaporadora y condensadora) de 1.5 ton de refrigeración o piso techo incluye: maniobra, presentación , acarreos, colocación y puesta en marcha, mano de obra, herramienta, equipo,  limpieza de los lugares de trabajo durante y al final de los mismos. (a una altura máxima de 4 metros.)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de equipo de aire acondicionado tipo minisplit (evaporadora y condensadora) de 2.0 ton de refrigeración o piso techo  incluye: maniobra, presentación, acarreos, colocación y puesta en marcha, mano de obra, herramienta, equipo,  limpieza de los lugares de trabajo durante y al final de los mismos. (a una altura máxima de 4 metros.)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de equipo de aire acondicionado tipo minisplit (evaporadora y condensadora) de 3.0 ton de refrigeración o piso techo  incluye: maniobra, presentación , acarreos, colocación y puesta en marcha, mano de obra, herramienta, equipo,  limpieza de los lugares de trabajo durante y al final de los mismos. (a una altura máxima de 4 metros.)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo minisplit de 1 toneladas de refrigeración existente, trabajo consistente en: desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, equipo, herramienta,  limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo minisplit de 1.5 toneladas de refrigeración existente, trabajo consistente en:  desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, equipo, herramienta,  limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo minisplit de hasta 2 toneladas de refrigeración existente, trabajo consistente en:  desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha. incluye: acarreos, mano de obra, andamios y/o escaleras, equipo, herramienta,  limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo minisplit de 3 toneladas de refrigeración existente, trabajo consistente en:  desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, equipo, herramienta,  limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Destape de drenaje de condensado de equipo de aire acondicionado, incluye:  limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Aislamiento tipo insultube de 5/8"- 3/8", incluye:  colocación, mano de obra, herramienta, equipo, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de capacitor para equipo de aire acondicionado, incluye: revisión y diagnostico, retiro, instalación del nuevo, revisiones electricas, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de motor para condensador de minisplit, incluye: revisión y diagnostico de motor dañado, desmontaje y montaje de motor, revisiones electricas, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de turbina para evaporador de minisplit, incluye: revisión y diagnostico de turbina dañada, desmontaje y montaje de motor, revisiones electricas, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de contactor a equipo de aire acondicionado, incluye: revisión y diagnostico, retiro, instalación del nuevo, revisiones electricas, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de transformador a equipo de aire acondicionado, incluye: revisión y diagnostico, retiro, instalación del nuevo, revisiones electricas,  limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Detección y reparación de fuga de gas en tuberia aparente en equipo de aire acondicionado tipo minisplit y/o piso techo, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Deteccion y reparacion de fuga de serpentin en tuberia de aluminio con soldadura incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de carga de gas a equipo de aire acondicionado, incluye: limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de compresor de aire acondicionado tipo minisplit de 1 a 3 ton de refrigeración, incluye:  desmantelamiento, cambio de filtros, limpieza de sistema, carga de gas, maniobra, colocación y puesta en marcha, mano de obra, herramienta, equipo, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de compresor de aire acondicionado tipo paquete de 5 ton de refrigeración, incluye:  desmantelamiento, cambio de filtros, limpieza de sistema, carga de gas, maniobra, colocación y puesta en marcha, mano de obra, herramienta, equipo, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de compresor de aire acondicionado tipo paquete de 7.5 ton de refrigeración, incluye: desmantelamiento, cambio de filtros, limpieza de sistema, carga de gas, maniobra, colocación y puesta en marcha, mano de obra, herramienta, equipo, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocación, instalación y puesta en marcha de compresor de aire acondicionado tipo paquete de 10 ton de refrigeración, incluye: desmantelamiento, cambio de filtros, limpieza de sistema, carga de gas, maniobra, colocación y puesta en marcha, mano de obra, herramienta, equipo, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de tarjeta electrónica para equipo de aire acondicionado tipo minisplit o piso techo,  incluye: retiro de la tarjeta dañada, instalación de la nueva tarjeta, revisiones electricas, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo paquete de 5 toneladas de refrigeración existente, trabajo consistente en: desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra,  equipo, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo paquete de 7.5 toneladas de refrigeración existente, trabajo consistente en, desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra,  equipo, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo paquete de 10 toneladas de refrigeración existente, trabajo consistente en, desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra,  herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo paquete de 15 toneladas de refrigeración existente, trabajo consistente en, desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, andamios y/o escaleras, equipo, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de mantenimiento preventivo a equipo de aire acondicionado tipo paquete de 20 toneladas de refrigeración existente, trabajo consistente en, desmontaje de carcazas, chequeo, sopleteado, lavado de accesorios, limpieza general, maniobras, montaje, conexión y puesta en marcha, incluye: acarreos, mano de obra, equipo, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Aislamiento de tuberías tipo insul-tube y/o armaflex de hasta 1" de diámetro exterior, forro con manta cruda y aplicación de top total de comex 3 años a dos manos, incluye: acarreos, desperdicios, mano de obra, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de bomba de condensados mini orange , mca aspen pumps para dren de condensados de veaporadoras tipo minisplit, incluye : flete, mano de obra,acarreos, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de extractor de baños para manejar 150 pcm. con instalación aparente (canaleta) a una distancia no maxima a 4 mts.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de tuberia de pvc de 3/4" para denaje, incluye: pegamento, mano de obra, herramienta y/o equipo y limpieza de los lugares de trabajo durante y al final de los mismos, con salida con adecuación manual de pared.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de tuberia de pvc de 1" para denaje, incluye: pegamento, mano de obra, herramienta y/o equipo y limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de tuberia de pvc de 1" para denaje con instalacion exedente por metro lineal, incluye: pegamento, mano de obra, herramienta y/o equipo y limpieza de los lugares de trabajo durante y al final de los mismos.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de termostato para equipo fan and coil o piso techo.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 36,000 btu/hra ( 3ton).  incluye conexion electrica, adecuacion de ducteria existente y puesta en marcha. no incluye fabricacion de ducteria, grua  y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 48,000 btu/hr . ( 4ton) incluye conexion electrica, adecuacion de ducteria y puesta en marcha. no incluye fabricacion de ducteria, grua  y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 60,000 btu/hr, mca. carrier ( 5 ton) incluye conexion electrica, adecuacion de ducteria existente y puesta en marcha. no incluye fabricacion de ducteria, grua y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 72,000 btu/hr. ( 6 ton) incluye conexion electrica, adecuacion de ducteria exitente y puesta en marcha. no incluye fabricacion de ducteria, grua y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 78,000 btu/hr. (6.5 ton) incluye conexion electrica, adecuacion de ducteria y puesta en marcha. no incluye fabricacion de ducteria, grua  y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 90,000 btu/hr. (7.5 ton) incluye conexion electrica, adecuacion de ducteria existente  y puesta en marcha. no incluye fabricacion de ducteria, grua y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 102,000 btu/hr. ( 8.5 ton) incluye conexion electrica, adecuacion de ducteria existente  y puesta en marcha. no incluye fabricacion de ducteria, grua y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad tipo paquete con una capacidad de 120,000 btu/hr. (10 ton) incluye conexion electrica, adecuacion de ducteria existente y puesta en marcha. no incluye fabricacion de ducteria, grua  y/o maniobras para ingreso de equipo en azotea.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de termostato para unidad tipo paquete.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de filtro deshidratador de tres toneladas de refrigeracion tipo soldable marca tetron o similar para tubo de 3/8" de diam.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion de termostato electronico con display digital a 24v para fan &amp; coil.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad fan and coil r 410a de 2 ton de refrigeracion de expansion directa trabajando a 220 v/1f/60hz</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad fan and coil, r 410a de 3 ton de refrigeracion de expansion directa trabajando a 220 v/1f/60hz</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad fan and coil, r 410a de 4 ton de refrigeracion de expansin directa trabajando a 220 v/1f/60hz</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de unidad fan and coil de 5 ton de refrigeracion de expansion directa trabajando a 220 v/1f/60hz</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion condensadora  para equipo minisplit, piso techo o fan and coil solo frio r410 descarga vertical 13 seer a 220/1/60 de 4.0 ton trabajando a 220v/2f/60hz. o similar.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion condensadora  solo frio  para equipo minisplit, piso techo o fan and coil r410 descarga vertical de 5 ton  a 220/1/60  .  incluye conexion electrica, adecuacion de tuberia existente  y puesta en marcha.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion fan &amp; coil r410   1.5 t.r. 220volts-1fase-60hz expansion directa</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion condensadora  para equipo minisplit, piso techo o fan and coil r-410 a 220volts-1fase-60hz 1.5 t.r  expansion dirtecta</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion condensadora  para equipo minisplit, piso techo o fan and coil r-410 a 220volts-1fase-60hz.  2.00 t.r. expansion directa</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación de tablero de distribución tipo qo 3 fases 4 hilos con interruptor principal hasta 100 amperes, marca squared o similar</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion condensadora para equipo minisplit, piso techo o fan and coil r-410 a 220volts-1fase-60hz.  4.00 t.r. expansion directa.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Colocacion condensadora  para equipo minisplit, piso techo o fan and coil r-410 a 220volts-1fase-60hz.  5.00 t.r. expansion directa</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Detección y reparación de fuga de gas en equipo de aire acondicionado tipo fan and coil y/o dividido, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento, herramienta, limpieza de los lugares de trabajo durante y al final de los mismos. ( considerado en tuberia aparente y/o sin desmonte de serpentin)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Detección y reparación de fuga de gas en equipo de aire acondicionado tipo paquete de 5 a 20 toneladas, incluye: sellado de fuga, carga de gas, pruebas de funcionamiento,  herramienta,  limpieza de los lugares de trabajo durante y al final de los mismos. (considerado en tuberia aparente y/o sin desmonte de serpentin)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Servicio de revisión de encendido, mediciones y parametros de operación de equipo de a/a encontrándose en correcto funcionamiento.</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalación adicional para minisplit desde evaporador hasta condensador, incluye; instalación de tubería de cobre 3/4" para refrigerante aislada, cableado de control condulac anti flama tensión máxima de operación 600v temperatura máxima en conductor en ambiente seco 90 y carga de gas correspondiente a los metros excedentes, limpieza de los lugares de trabajo durante y al final de los mismos. (instalación aparente)</a></li>
+                      <li><a href="#agregar-servicio-catalogado">Instalacion de guarda para termostato para equipo fan and coil o piso techo</a></li>
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Carpintería</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Canceleria y cerrajería</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Desmantelamiento</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Impermeabilización</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Instalación hidrosanitaria</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Instalacion electrica</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Limpieza y acarreo</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Pintura</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Preliminares</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Exteriores</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+              <div data-role="collapsible">
+                  <h2>Visitas complementarias</h2>
+                  <ul data-role="listview" data-filter-theme="c"
+                      data-filter="true" data-filter-reveal="true"
+                      data-filter-placeholder="Buscar concepto">
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div data-role="footer" data-position="fixed">
+          <div data-role="navbar" data-theme="b">
+              <ul>
+                  <li>
+                      <a href="#agregar-servicio" rel="external" data-icon="check">Agregar no catalogado</a>
+                  </li>
+              </ul>
+          </div>
+      </div><!-- /footer -->
+    </div>
+
+    <div id="agregar-servicio-catalogado" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Agregar servicio</h1>
+            <div data-role="navbar" data-theme="b">
+                <ul>
+                    <li style="text-align: center;font-size: 22px;">
+                        Aire Acondicionado
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+            <p>Colocación, instalación y puesta en marcha de equipo de aire acondicionado tipo minisplit (evaporadora y condensadora) de 1.0 ton de refrigeración, incluye: maniobra, presentación, acarreos, colocación y puesta en marcha, mano de obra, herramienta, equipo y limpieza de los lugares de trabajo durante y al final de los mismos. (a una altura máxima de 4 metros.)</p>
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value=""/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Agregar</a>
+            </form>
+        </div>
+    </div>
+    
+
+    <div id="editar-servicio-catalogado" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Editar servicio</h1>
+            <a href="#eliminar" data-rel="dialog" data-theme="e" data-icon="delete">Eliminar</a>
+            <div data-role="navbar" data-theme="b">
+                <ul>
+                    <li style="text-align: center;font-size: 22px;">
+                        Aire Acondicionado
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+            <p>Colocación, instalación y puesta en marcha de equipo de aire acondicionado tipo minisplit (evaporadora y condensadora) de 1.0 ton de refrigeración, incluye: maniobra, presentación, acarreos, colocación y puesta en marcha, mano de obra, herramienta, equipo y limpieza de los lugares de trabajo durante y al final de los mismos. (a una altura máxima de 4 metros.)</p>
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value="1"/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Guardar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="agregar-servicio" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Agregar servicio</h1>
+        </div>
+        <div data-role="content">
+            <p>Se cargan los conceptos referentes al costo de mano de obra.</p>
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <label for="outsourced">Subcontratado?</label>
+                            </div>
+                            <div class="ui-block-b">
+                                <select name="outsourced" id="outsourced" data-role="slider">
+                                    <option value="false">No</option>
+                                    <option value="true">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <select id="category" name="category" required="required">
+                            <option value="">Categoria</option>
+                            <option value="Acabados en pisos, muros y plafones">Acabados en pisos, muros y plafones</option>
+                            <option value="Aire acondicionado">Aire acondicionado</option>
+                            <option value="Carpintería">Carpintería</option>
+                            <option value="Canceleria y cerrajería">Canceleria y cerrajería</option>
+                            <option value="Desmantelamiento">Desmantelamiento</option>
+                            <option value="Impermeabilización">Impermeabilización</option>
+                            <option value="Instalación hidrosanitaria">Instalación hidrosanitaria</option>
+                            <option value="Instalacion electrica">Instalacion electrica</option>
+                            <option value="Limpieza y acarreo">Limpieza y acarreo</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Preliminares">Preliminares</option>
+                            <option value="Exteriores">Exteriores</option>
+                            <option value="Visitas complementarias">Visitas complementarias</option>
+                        </select>
+                    </li>
+                    <li>
+                        <textarea name="description" id="description" placeholder="Descripcion"></textarea>
+                    </li>
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value=""/>
+                    </li>
+                    <li>
+                        <input type="number" name="price" id="price" placeholder="Precio" value=""/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Agregar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="editar-servicio" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Editar servicio</h1>
+            <a href="#eliminar" data-rel="dialog" data-theme="e" data-icon="delete">Eliminar</a>
+        </div>
+        <div data-role="content">
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <label for="outsourced">Subcontratado?</label>
+                            </div>
+                            <div class="ui-block-b">
+                                <select name="outsourced" id="outsourced" data-role="slider">
+                                    <option value="false">No</option>
+                                    <option value="true" selected="selected">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <select id="category" name="category" required="required">
+                            <option value="">Categoria</option>
+                            <option value="Acabados en pisos, muros y plafones">Acabados en pisos, muros y plafones</option>
+                            <option value="Aire acondicionado" selected="selected">Aire acondicionado</option>
+                            <option value="Carpintería">Carpintería</option>
+                            <option value="Canceleria y cerrajería">Canceleria y cerrajería</option>
+                            <option value="Desmantelamiento">Desmantelamiento</option>
+                            <option value="Impermeabilización">Impermeabilización</option>
+                            <option value="Instalación hidrosanitaria">Instalación hidrosanitaria</option>
+                            <option value="Instalacion electrica">Instalacion electrica</option>
+                            <option value="Limpieza y acarreo">Limpieza y acarreo</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Preliminares">Preliminares</option>
+                            <option value="Exteriores">Exteriores</option>
+                            <option value="Visitas complementarias">Visitas complementarias</option>
+                        </select>
+                    </li>
+                    <li>
+                        <textarea name="description" id="description" placeholder="Descripcion"></textarea>
+                    </li>
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value="1"/>
+                    </li>
+                    <li>
+                        <input type="number" name="price" id="price" placeholder="Precio" value="54.60"/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Guardar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="agregar-material" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Agregar material</h1>
+        </div>
+        <div data-role="content">
+            <p>Se ingresan los conceptos de aquellos insumos que se requieren para la ejecuci&ocute;n de los trabajos, pero que no entran dentro de los alcances del servicio contratado por el cliente (refacciones o materiales), asi como la renta de maquinaria/equipo (renta de andamios, escaleras, plantas de emergencia, generadores, etc.), cualquier servicio adicional que sea realizado por un proveedor especializado y cualquier bien que no se catalogue como "Equipo".</p>
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <textarea name="description" id="description" placeholder="Descripcion"></textarea>
+                    </li>
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value=""/>
+                    </li>
+                    <li>
+                        <select id="medida" name="medida" required="required">
+                            <option value="">Unidad</option>
+                            <option value="Pieza">Pieza</option>
+                            <option value="Kilogramo">Kilogramo</option>
+                            <option value="Litro">Litro</option>
+                            <option value="Servicio">Servicio</option>
+                            <option value="Caja">Caja</option>
+                            <option value="Cubeta">Cubeta</option>
+                            <option value="Galon">Galon</option>
+                            <option value="Kit">Kit</option>
+                            <option value="Lata">Lata</option>
+                            <option value="Lote">Lote</option>
+                            <option value="Metro lineal">Metro lineal</option>
+                            <option value="Metro cuadrado">Metro cuadrado</option>
+                            <option value="Metro cubico">Metro cubico</option>
+                            <option value="Pie">Pie</option>
+                            <option value="Paquete">Paquete</option>
+                            <option value="Rollo">Rollo</option>
+                            <option value="Tramo">Tramo</option>
+                            <option value="Porron">Porron</option>
+                            <option value="Jornal">Jornal</option>
+                            <option value="Saco">Saco</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Medio jornal">Medio jornal</option>
+                            <option value="Salida">Salida</option>
+                            <option value="Flete">Flete</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="number" name="price" id="price" placeholder="Precio" value=""/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Agregar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="editar-material" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Editar material</h1>
+            <a href="#eliminar" data-rel="dialog" data-theme="e" data-icon="delete">Eliminar</a>
+        </div>
+        <div data-role="content">
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <textarea name="description" id="description" placeholder="Descripcion"></textarea>
+                    </li>
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value="1"/>
+                    </li>
+                    <li>
+                        <select id="medida" name="medida" required="required">
+                            <option value="">Unidad</option>
+                            <option value="Pieza">Pieza</option>
+                            <option value="Kilogramo">Kilogramo</option>
+                            <option value="Litro">Litro</option>
+                            <option value="Servicio">Servicio</option>
+                            <option value="Caja" selected="selected">Caja</option>
+                            <option value="Cubeta">Cubeta</option>
+                            <option value="Galon">Galon</option>
+                            <option value="Kit">Kit</option>
+                            <option value="Lata">Lata</option>
+                            <option value="Lote">Lote</option>
+                            <option value="Metro lineal">Metro lineal</option>
+                            <option value="Metro cuadrado">Metro cuadrado</option>
+                            <option value="Metro cubico">Metro cubico</option>
+                            <option value="Pie">Pie</option>
+                            <option value="Paquete">Paquete</option>
+                            <option value="Rollo">Rollo</option>
+                            <option value="Tramo">Tramo</option>
+                            <option value="Porron">Porron</option>
+                            <option value="Jornal">Jornal</option>
+                            <option value="Saco">Saco</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Medio jornal">Medio jornal</option>
+                            <option value="Salida">Salida</option>
+                            <option value="Flete">Flete</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="number" name="price" id="price" placeholder="Precio" value="54.60"/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Guardar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="agregar-equipo" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Agregar equipo</h1>
+        </div>
+        
+        <div data-role="content">
+            <p>Se indican los bienes que son suministrados al cliente, los cuales son considerados como un activo fijo o inversi&ocute;n por parte de este; como los equipos de aire acondicionado o similares.</p>
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <textarea name="description" id="description" placeholder="Descripcion"></textarea>
+                    </li>
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value=""/>
+                    </li>
+                    <li>
+                        <select id="medida" name="medida" required="required">
+                            <option value="">Unidad</option>
+                            <option value="Pieza">Pieza</option>
+                            <option value="Kilogramo">Kilogramo</option>
+                            <option value="Litro">Litro</option>
+                            <option value="Servicio">Servicio</option>
+                            <option value="Caja">Caja</option>
+                            <option value="Cubeta">Cubeta</option>
+                            <option value="Galon">Galon</option>
+                            <option value="Kit">Kit</option>
+                            <option value="Lata">Lata</option>
+                            <option value="Lote">Lote</option>
+                            <option value="Metro lineal">Metro lineal</option>
+                            <option value="Metro cuadrado">Metro cuadrado</option>
+                            <option value="Metro cubico">Metro cubico</option>
+                            <option value="Pie">Pie</option>
+                            <option value="Paquete">Paquete</option>
+                            <option value="Rollo">Rollo</option>
+                            <option value="Tramo">Tramo</option>
+                            <option value="Porron">Porron</option>
+                            <option value="Jornal">Jornal</option>
+                            <option value="Saco">Saco</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Medio jornal">Medio jornal</option>
+                            <option value="Salida">Salida</option>
+                            <option value="Flete">Flete</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="number" name="price" id="price" placeholder="Precio" value=""/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Agregar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="editar-equipo" data-role="page">
+        <div data-role="header" data-theme="b">
+            <a href="#" data-rel="back" data-theme="c" data-icon="back">Cancelar</a>
+            <h1>Editar equipo</h1>
+            <a href="#eliminar" data-rel="dialog" data-theme="e" data-icon="delete">Eliminar</a>
+        </div>
+        <div data-role="content">
+            <form id="myform" action="formprocessor.php" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <textarea name="description" id="description" placeholder="Descripcion"></textarea>
+                    </li>
+                    <li>
+                        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" value="1"/>
+                    </li>
+                    <li>
+                        <select id="medida" name="medida" required="required">
+                            <option value="">Unidad</option>
+                            <option value="Pieza" selected="selected">Pieza</option>
+                            <option value="Kilogramo">Kilogramo</option>
+                            <option value="Litro">Litro</option>
+                            <option value="Servicio">Servicio</option>
+                            <option value="Caja">Caja</option>
+                            <option value="Cubeta">Cubeta</option>
+                            <option value="Galon">Galon</option>
+                            <option value="Kit">Kit</option>
+                            <option value="Lata">Lata</option>
+                            <option value="Lote">Lote</option>
+                            <option value="Metro lineal">Metro lineal</option>
+                            <option value="Metro cuadrado">Metro cuadrado</option>
+                            <option value="Metro cubico">Metro cubico</option>
+                            <option value="Pie">Pie</option>
+                            <option value="Paquete">Paquete</option>
+                            <option value="Rollo">Rollo</option>
+                            <option value="Tramo">Tramo</option>
+                            <option value="Porron">Porron</option>
+                            <option value="Jornal">Jornal</option>
+                            <option value="Saco">Saco</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Medio jornal">Medio jornal</option>
+                            <option value="Salida">Salida</option>
+                            <option value="Flete">Flete</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="number" name="price" id="price" placeholder="Precio" value="11950.00"/>
+                    </li>
+                    <li>
+                        <textarea name="remark" placeholder="Observacion"></textarea>
+                    </li>
+                </ul>
+                <a href="#main" data-role="button" data-theme="b">Guardar</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="eliminar" data-role="dialog" data-overlay-theme="b">
+        <div data-role="header" data-theme="b">
+            <h1>Eliminar concepto</h1>
+        </div>
+        <div data-role="content">
+            <p>LG Dual Inverter de 18000 BTUs</p>
+            <h3 class="ui-title" style="text-align: center;">Confirmas la eliminacion del concepto?</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#" data-rel="back" data-role="button">Cancelar</a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#main" data-role="button" data-theme="e">Si, eliminar</a>  
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
